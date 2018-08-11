@@ -3,7 +3,8 @@ var request = new XMLHttpRequest();
 
 function sender(result) {
     console.log(result);
-    var point = parseInt($("#Value").val());
+    var point = parseInt($("#Value").val()) || 0;
+
     if (result == 0) result = 1000;
     request.open('GET', "https://script.google.com/macros/s/AKfycbz7GBmXEky8aCJCkbzz6FiWKWGWCT3lgbyywf7zLlpK9wfx-EU/exec?id=" + result + "&value=" + point + "&mode=true");
     request.send("");
