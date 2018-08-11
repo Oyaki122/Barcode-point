@@ -1,0 +1,13 @@
+@charset utf-8;
+body {
+    font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    background-color: blanchedalmond;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#picture {
+    border: solid black 1px;
+    display: block;
+    margin: 0 auto;
+}
