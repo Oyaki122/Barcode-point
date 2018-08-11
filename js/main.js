@@ -1,3 +1,32 @@
+var request = new XMLHttpRequest();
+
+
+function sender(result) {
+    console.log(result);
+    var point = parseInt($("#Value").val());
+    if (result == 0) result = 1000;
+    request.open('GET', "https://script.google.com/macros/s/AKfycbz7GBmXEky8aCJCkbzz6FiWKWGWCT3lgbyywf7zLlpK9wfx-EU/exec?id=" + result + "&value=" + point + "&mode=true");
+    request.send("");
+    request.onreadystatechange = function () {
+        if (request.readyState != 4) {
+            $('.sendresult').text("Sending...");
+        } else if (request.status != 200) {
+            $('.sendresult').text("senderror");
+        } else {
+
+            var json = request.responseText;
+            var data = JSON.parse(json);
+            if (data.value == undefined) {
+                $('.sendresult').text("senderror");
+            } else {
+                $('.sendresult').text("Success now" + data.value + "pt");
+
+            }
+        }
+    };
+}
+
+
 $(function () {
 
     var takePicture = document.querySelector("#Take-Picture"),
@@ -12,8 +41,9 @@ $(function () {
             for (var i = 0; i < result.length; i++) {
                 tempArray.push(result[i].Format + " : " + result[i].Value);
             }
-            console.log(result);
+
             Result.innerHTML = tempArray.join("<br />");
+            sender(result[0].Value);
         } else {
             if (result.length === 0) {
                 Result.innerHTML = "Decoding failed.";
