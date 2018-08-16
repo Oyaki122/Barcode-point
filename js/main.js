@@ -20,7 +20,7 @@ function sender(result) {
             if (data.value == undefined) {
                 $('.sendresult').text("senderror");
             } else {
-                $('.sendresult').text("Success now" + data.value + "pt");
+                $('.sendresult').text("Success now " + data.value + "pt");
 
             }
         }
