@@ -41,10 +41,11 @@ $(function () {
             var tempArray = [];
             for (var i = 0; i < result.length; i++) {
                 tempArray.push(result[i].Format + " : " + result[i].Value);
+                sender(result[i].Value);
             }
 
             Result.innerHTML = tempArray.join("<br />");
-            sender(result[0].Value);
+
         } else {
             if (result.length === 0) {
                 Result.innerHTML = "Decoding failed.";
