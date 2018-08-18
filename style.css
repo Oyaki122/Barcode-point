@@ -1,7 +1,7 @@
-@charset utf-8;
+@charset "utf-8";
 body {
     font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-    background-color: blanchedalmond;
+    background-color: rgb(228, 251, 255);
     width: 100%;
     max-width: 950px;
     margin: 0 auto;
@@ -11,4 +11,55 @@ body {
     border: solid black 1px;
     display: block;
     margin: 0 auto;
+}
+
+#taker {
+    display: block;
+    color: white;
+    background-color: rgb(226, 100, 100);
+    padding: 6px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 12px;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#Value {
+    display: inline-block;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    font-size: 45px;
+    text-align: right;
+    border-radius: 12px;
+    border: 2px Red solid;
+}
+
+#textbit,
+#log {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 2em;
+    border: 1px black solid;
+    background-color: white;
+}
+
+.upload_btn {
+    margin-bottom: 30px;
+}
+
+.point {
+    font-size: 35px;
+}
+
+.pt_select {
+    width: 300px;
+    margin: 0 auto;
+}
+
+h4 {
+    margin-left: 1em;
 }

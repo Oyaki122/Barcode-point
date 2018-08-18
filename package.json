@@ -7,5 +7,13 @@
   },
   "author": "Oyaki",
   "license": "ISC",
-  "description": ""
+  "description": "For Hiyoshi fes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oyaki122/Barcode-point.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Oyaki122/Barcode-point/issues"
+  },
+  "homepage": "https://github.com/Oyaki122/Barcode-point#readme"
 }

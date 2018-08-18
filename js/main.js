@@ -11,7 +11,7 @@ function sender(result) {
         request[i] = new XMLHttpRequest();
         request[i].num = result[i].Value;
 
-        request[i].logarea = logarea.appendChild(document.createElement("p"));
+        request[i].logarea = logarea.insertBefore(document.createElement("p"), logarea.firstChild);
 
 
         if (result == 0) result = 1000;
@@ -21,15 +21,16 @@ function sender(result) {
             if (this.readyState != 4) {
                 this.logarea.innerHTML = "Sending...";
             } else if (this.status != 200) {
-                this.logarea.innerHTML = "senderror";
+                this.logarea.innerHTML = "Error id:" + this.num;
             } else {
 
                 var json = this.responseText;
                 var data = JSON.parse(json);
                 if (data.value == undefined) {
-                    this.logarea.innerHTML = "senderror";
+                    this.logarea.innerHTML = "Error id:" + this.num;
                 } else {
-                    this.logarea.innerHTML = "Success " + this.num + " " + data.value + "pt";
+                    var date = new Date();
+                    this.logarea.innerHTML = "Success id:" + this.num + " " + data.value + "pt--" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
                 }
             }
@@ -37,8 +38,9 @@ function sender(result) {
     }(result));
 }
 
-
 $(function () {
+
+
 
     var takePicture = document.querySelector("#Take-Picture"),
         showPicture = document.createElement("img");
