@@ -30,7 +30,7 @@ class Session {
 			() => {
 				var log = this.logarea.insertBefore(window.document.createElement("p"), this.logarea.firstChild);
 				log.innerHTML = "Error id:" + this.ID;
-			})
+			});
 	}
 }
 
@@ -48,6 +48,10 @@ function sender(result) {
 	for (var i = 0; i < result.length; i++) {
 		sessions[i] = new Session(result[i].Value, point, $, logarea);
 		sessions[i].start();
+	}
+
+	for (var j = 0; j < result.length; j++) {
+		delete sessions[i];
 	}
 
 
