@@ -2,45 +2,51 @@
 <html lang="jp">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- for Mobile Devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- キャッシュ禁止措置 -->
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <!-- クロール禁止措置 -->
-    <meta name="robots" content="noindex,nofollow">
-    <!-- スクリプト読み込み -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<meta charset="UTF-8">
+	<!-- for Mobile Devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- キャッシュ禁止措置 -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<!-- クロール禁止措置 -->
+	<meta name="robots" content="noindex,nofollow">
+	<!-- スクリプト読み込み -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <script type="application/javascript" src="js/JOB.js"></script>
+	<script type="application/javascript" src="js/JOB.js"></script>
 
-    <script type="application/javascript" src="js/main.js"></script>
+	<script type="application/javascript" src="js/main.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>BarCodeTest</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>BarCodeTest</title>
 </head>
 
 <body>
-    <div id="container">
-        <h1>電工研ポイント管理test</h1>
-        <canvas width="320" height="240" id="picture" style="display:none;"></canvas>
-        <div class="upload_btn">
-            <label for="Take-Picture" id="taker">読み込み
-                <input id="Take-Picture" type="file" accept="image/*;capture=camera" style="display: none;">
-            </label>
-        </div>
-        <div class="pt_select">
-            <label for="Value" class="point">Point:</label>
-            <input id="Value" type="number" required>
-            <label for="Value" class="point">pt</label>
-        </div>
-        <h4>読み取り情報</h4>
-        <p id="textbit"></p>
-        <h4>書き込み情報</h4>
-        <div id="log"></div>
-    </div>
+	<div id="container">
+		<h1>電工研ポイント管理test</h1>
+		<!-- 読み込み結果表示用のcanvasだが、表示させていない -->
+		<canvas width="320" height="240" id="picture" style="display:none;"></canvas>
+		<!-- 画像選択ボタン -->
+		<!-- input自身を表示させず、labelにstyleを当てている -->
+		<div class="upload_btn">
+			<label for="Take-Picture" id="taker">読み込み
+				<input id="Take-Picture" type="file" accept="image/*;capture=camera" style="display: none;">
+			</label>
+		</div>
+		<!-- 加算ポイント入力フォーム -->
+		<div class="pt_select">
+			<label for="Value" class="point">Point:</label>
+			<input id="Value" type="number" required>
+			<label for="Value" class="point">pt</label>
+		</div>
+		<!-- 読み込んだバーコードの情報を表示 -->
+		<h4>読み取り情報</h4>
+		<p id="textbit"></p>
+		<!-- 送信結果を表示 -->
+		<h4>書き込み情報</h4>
+		<div id="log"></div>
+	</div>
 
 </body>
 
